@@ -14,21 +14,11 @@
   </ion-header>
 
   <ion-list [inset]="true">
-    <ion-item>
-      <ion-label>Tofu</ion-label>
+    <ion-item *ngFor="let ingredient of ingredientList; index as i">
+      <ion-label>{{ingredient}}</ion-label><ion-icon (click)="removeIngredient(i)" name="trash-outline"></ion-icon>
     </ion-item>
     <ion-item>
-      <ion-label>Jasmine Rice</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Soy Sauce</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Carrots</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Snap Peas</ion-label>
+      <ion-input id="input" #input (keyup.enter)="addIngredient(input.value)" placeholder="Add Ingredient"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button expand="block">Add Ingredients<ion-icon slot="end" name="add"></ion-icon></ion-button>
 </ion-content>

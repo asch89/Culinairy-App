@@ -13,5 +13,6 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button expand="block">Generate Recipes<ion-icon slot="end" name="aperture-outline"></ion-icon></ion-button>
+  <ion-button (click)="generateRecipes()" expand="block">Generate Recipes<ion-icon slot="end" name="aperture-outline"></ion-icon></ion-button>
+  <p>{{output}}</p>
 </ion-content>
